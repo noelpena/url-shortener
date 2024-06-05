@@ -1,8 +1,10 @@
 ---
+import AdvancedStats from "../components/Advanced_Stats.astro";
 import CTA from "../components/CTA.astro";
 import Footer from "../components/Footer.astro";
 import Hero from "../components/Hero.astro";
 import Nav from "../components/Nav.astro";
+import Url_Input from "../components/Url_Input.astro";
 ---
 
 <html lang="en">
@@ -29,6 +31,7 @@ import Nav from "../components/Nav.astro";
 			}
 			main {
 				overflow: hidden;
+				background-color: #fff;
 			}
 
 			@media screen and (max-width: 1440px) {
@@ -51,6 +54,8 @@ import Nav from "../components/Nav.astro";
 		<Nav />
 		<main>
 			<Hero />
+			<Url_Input />
+			<AdvancedStats />
 			<CTA />
 		</main>
 		<Footer />

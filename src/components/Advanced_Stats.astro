@@ -1,0 +1,157 @@
+<section id="advanced-stats">
+	<div id="advanced-stats-wrap">
+		<div id="stats-heading">
+			<h2>Advanced Statistics</h2>
+			<p class="lead">
+				Track how your links are performing across the web with our
+				advanced statistics dashboard.
+			</p>
+		</div>
+
+		<div id="cards">
+			<div class="card">
+				<img src="../images/icon-brand-recognition.svg" alt="" />
+				<h3>Brand Recognition</h3>
+
+				<p>
+					Boost your brand recognition with each click. Generic links
+					don't mean a thing. Branded links help instil confidence in
+					your content.
+				</p>
+			</div>
+			<div class="card">
+				<img src="../images/icon-detailed-records.svg" alt="" />
+				<h3>Detailed Records</h3>
+
+				<p>
+					Gain insights into who is clicking your links. Knowing when
+					and where people engage with your content helps inform
+					better decisions.
+				</p>
+			</div>
+			<div class="card">
+				<img src="../images/icon-fully-customizable.svg" alt="" />
+				<h3>Fully Customizable</h3>
+
+				<p>
+					Improve brand awareness and content discoverability through
+					customizable links, supercharging audience engagement.
+				</p>
+			</div>
+		</div>
+	</div>
+	<div id="hr-wrap">
+		<hr />
+	</div>
+</section>
+
+<style>
+	section#advanced-stats {
+		background-color: #eff1f7;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: 3rem 0 6rem;
+		position: relative;
+	}
+
+	div#advanced-stats-wrap {
+		max-width: 1440px;
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		gap: 6rem;
+		padding: 3rem 0;
+	}
+
+	#stats-heading {
+		text-align: center;
+	}
+
+	h2 {
+		color: #34313d;
+		font-size: 2.5rem;
+		font-weight: 700;
+		margin-bottom: 1rem;
+	}
+
+	p.lead {
+		color: #9e9aa8;
+		font-weight: 500;
+		margin: 0;
+	}
+
+	#cards {
+		display: flex;
+		gap: 2rem;
+		position: relative;
+		z-index: 2;
+	}
+
+	#cards .card {
+		background-color: #fff;
+		padding: 2rem;
+		padding-top: 2rem;
+		border-radius: 8px;
+		display: flex;
+		flex-direction: column;
+		text-align: left;
+		justify-content: flex-start;
+		position: relative;
+	}
+
+	#cards img {
+		width: 40px;
+		height: 40px;
+		background-color: #3a3054;
+		border-radius: 50%;
+		padding: 1rem;
+		position: absolute;
+		top: -2.5rem;
+	}
+
+	#cards h3 {
+		font-size: 1.5rem;
+	}
+
+	#cards p {
+		color: #9e9aa8;
+		line-height: 2;
+		padding: 0;
+		margin: 0;
+	}
+
+	#cards .card:first-child() {
+		margin-bottom: 6rem;
+	}
+
+	#cards .card:nth-child(2) {
+		margin-top: 3rem;
+		margin-bottom: 3rem;
+	}
+
+	#cards .card:last-child() {
+		margin-top: 6rem;
+	}
+
+	#hr-wrap {
+		position: absolute;
+		z-index: 1;
+		width: 100%;
+		height: 100%;
+		max-width: 1440px;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	hr {
+		position: relative;
+		top: 6rem;
+		width: 100%;
+		border: none;
+		border-top: 8px solid #2bd0d0;
+	}
+</style>

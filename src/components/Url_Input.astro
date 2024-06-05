@@ -1,0 +1,47 @@
+---
+import Button from "./Button.astro";
+---
+
+<section id="url-input">
+	<div id="url-input-wrap">
+		<input type="text" placeholder="Shorten a link here..." />
+		<Button text="Shorten it!" has_square_edges={true} />
+	</div>
+</section>
+
+<style>
+	section#url-input {
+		background-color: #eff1f7;
+	}
+
+	#url-input-wrap {
+		max-width: 1440px;
+		margin: 0 auto;
+		background-color: #3a3054;
+		background-image: url("../images/bg-shorten-desktop.svg");
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		display: flex;
+		gap: 2rem;
+		justify-content: center;
+		padding: 4rem;
+		border-radius: 10px;
+		position: relative;
+		top: -1.5rem;
+	}
+	#url-input-wrap input {
+		padding: 1rem 1.5rem;
+		width: 100%;
+		border: none;
+		outline: none;
+		font-size: 1.15rem;
+		border-radius: 10px;
+		font-family: "Poppins", sans-serif;
+		flex: 1;
+	}
+	#url-input-wrap input::placeholder {
+		color: #34313d;
+		font-family: "Poppins", sans-serif;
+	}
+</style>
