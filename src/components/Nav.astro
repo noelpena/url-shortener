@@ -1,10 +1,11 @@
 ---
 import Button from "./Button.astro";
+import Logo from "./Logo.astro";
 ---
 
 <nav>
 	<a href="#">
-		<img src="/images/logo.svg" alt="" />
+		<Logo color="#232127" />
 	</a>
 	<ul>
 		<div id="main-links">
@@ -26,6 +27,7 @@ import Button from "./Button.astro";
 		display: flex;
 		gap: 45px;
 		max-width: 1440px;
+		align-items: center;
 	}
 
 	nav img {
@@ -50,6 +52,9 @@ import Button from "./Button.astro";
 		text-decoration: none;
 		color: #9e9aa8;
 		font-weight: bold;
+	}
+	nav ul li a:hover {
+		color: #34313d;
 	}
 
 	nav ul > div {

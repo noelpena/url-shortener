@@ -1,14 +1,18 @@
 ---
-let { text, is_small } = Astro.props;
+let { text, is_small, has_square_edges } = Astro.props;
 is_small = is_small || false;
+has_square_edges = has_square_edges || false;
+
+let button_class =
+	(has_square_edges ? " btn-square" : "") + (is_small ? " btn-small" : "");
 ---
 
-<button type="button" class={is_small && "btn-small"}>{text}</button>
+<button type="button" class={button_class}>{text}</button>
 
 <style>
 	button {
 		border: none;
-		padding: 1rem 2rem;
+		padding: 1rem 2.5rem;
 		font-size: 1rem;
 		border-radius: 28px;
 		color: white;
@@ -16,9 +20,30 @@ is_small = is_small || false;
 		font-family: "Poppins", sans-serif;
 		font-weight: 700;
 		cursor: pointer;
+		position: relative;
 	}
 
 	button.btn-small {
 		padding: 0.5rem 1.5rem;
+	}
+
+	button.btn-square {
+		border-radius: 10px;
+	}
+
+	button:hover::before {
+		opacity: 0.4;
+	}
+
+	button::before {
+		content: " ";
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		border-radius: inherit;
+		background-color: #fff;
+		opacity: 0;
 	}
 </style>

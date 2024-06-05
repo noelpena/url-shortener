@@ -1,0 +1,79 @@
+---
+import Logo from "./Logo.astro";
+import SocialIcons from "./SocialIcons.astro";
+---
+
+<footer>
+	<div id="footer-wrap">
+		<a href="#">
+			<Logo color="#FFF" />
+		</a>
+
+		<div class="footer-links">
+			<strong>Features</strong>
+
+			<ul>
+				<li><a href="">Link Shortening</a></li>
+				<li><a href="">Branded Links</a></li>
+				<li><a href="">Analytics</a></li>
+			</ul>
+		</div>
+
+		<div class="footer-links">
+			<strong>Resources</strong>
+			<ul>
+				<li><a href="##">Blog</a></li>
+				<li><a href="##">Developers</a></li>
+				<li><a href="##">Support</a></li>
+			</ul>
+		</div>
+		<div class="footer-links">
+			<strong>Company</strong>
+
+			<ul>
+				<li><a href="##">About</a></li>
+				<li><a href="##">Our Team</a></li>
+				<li><a href="##">Careers</a></li>
+				<li><a href="##">Contact</a></li>
+			</ul>
+		</div>
+		<SocialIcons />
+	</div>
+</footer>
+
+<style>
+	footer {
+		background-color: #232127;
+	}
+	#footer-wrap {
+		display: flex;
+		justify-content: space-between;
+		max-width: 1440px;
+		margin: 0 auto;
+		padding: 4rem 1.5rem;
+	}
+
+	.footer-links {
+		color: #fff;
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+		margin-top: 1.5rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	ul li {
+		list-style-type: none;
+	}
+	ul li a {
+		text-decoration: none;
+		color: #bfbfbf;
+	}
+	ul li a:hover {
+		color: #2bd0d0;
+	}
+</style>
