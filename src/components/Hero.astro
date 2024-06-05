@@ -1,0 +1,56 @@
+---
+import Button from "./Button.astro";
+---
+
+<section id="hero">
+	<div id="hero-text">
+		<h1>More than just shorter links</h1>
+
+		<p>
+			Build your brand's recognition and get detailed insights on how your
+			links are performing.
+		</p>
+		<Button text="Get Started" />
+	</div>
+
+	<img src="/images/illustration-working.svg" alt="" />
+</section>
+
+<style>
+	#hero {
+		margin: 4rem auto 0;
+		max-width: 1440px;
+		display: flex;
+		align-items: flex-start;
+		gap: 3rem;
+		height: auto;
+		position: relative;
+		padding-bottom: 6rem;
+	}
+
+	#hero-text {
+		width: 45%;
+	}
+
+	h1 {
+		font-size: clamp(2.5rem, 5vw, 5rem);
+		color: #34313d;
+		line-height: 1.2;
+		margin-bottom: 1rem;
+		letter-spacing: -2px;
+	}
+
+	p {
+		color: #9e9aa8;
+		font-weight: 500;
+		font-size: 1.25rem;
+	}
+
+	img {
+		width: 50%;
+		display: block;
+		position: absolute;
+		right: -5rem;
+		top: 0;
+	}
+</style>

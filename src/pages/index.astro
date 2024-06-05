@@ -1,0 +1,54 @@
+---
+import Hero from "../components/Hero.astro";
+import Nav from "../components/Nav.astro";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+		<!-- FONTS  -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Shortly URL shortening API</title>
+
+		<style is:global>
+			body {
+				font-family: "Poppins", sans-serif;
+				margin: 0 auto;
+			}
+			main {
+				overflow: hidden;
+			}
+
+			@media screen and (max-width: 1440px) {
+				nav {
+					padding: 0 1.5rem;
+				}
+				#hero {
+					padding-left: 1.5rem;
+				}
+			}
+
+			@media screen and (max-width: 1200px) {
+				#hero img {
+					width: 60%;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<Nav />
+		<main>
+			<Hero />
+		</main>
+	</body>
+</html>

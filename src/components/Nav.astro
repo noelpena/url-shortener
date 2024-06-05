@@ -1,0 +1,60 @@
+---
+import Button from "./Button.astro";
+---
+
+<nav>
+	<a href="#">
+		<img src="/images/logo.svg" alt="" />
+	</a>
+	<ul>
+		<div id="main-links">
+			<li><a href="##">Features</a></li>
+			<li><a href="##">Pricing</a></li>
+			<li><a href="##">Resources</a></li>
+		</div>
+
+		<div id="cta-links">
+			<li><a href="##">Login</a></li>
+			<li><Button text="Sign Up" is_small={true} /></li>
+		</div>
+	</ul>
+</nav>
+
+<style>
+	nav {
+		margin: 3rem auto 0;
+		display: flex;
+		gap: 45px;
+		max-width: 1440px;
+	}
+
+	nav img {
+		max-width: 100%;
+		height: 35px;
+		display: block;
+	}
+
+	nav ul {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex: 1;
+		margin: 0;
+		padding: 0;
+	}
+
+	nav ul li {
+		list-style-type: none;
+	}
+	nav ul li a {
+		text-decoration: none;
+		color: #9e9aa8;
+		font-weight: bold;
+	}
+
+	nav ul > div {
+		display: flex;
+		gap: 30px;
+		align-items: center;
+	}
+</style>

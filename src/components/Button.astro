@@ -1,0 +1,24 @@
+---
+let { text, is_small } = Astro.props;
+is_small = is_small || false;
+---
+
+<button type="button" class={is_small && "btn-small"}>{text}</button>
+
+<style>
+	button {
+		border: none;
+		padding: 1rem 2rem;
+		font-size: 1rem;
+		border-radius: 28px;
+		color: white;
+		background-color: hsl(180, 66%, 49%);
+		font-family: "Poppins", sans-serif;
+		font-weight: 700;
+		cursor: pointer;
+	}
+
+	button.btn-small {
+		padding: 0.5rem 1.5rem;
+	}
+</style>
