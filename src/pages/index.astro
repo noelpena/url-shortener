@@ -34,7 +34,7 @@ import Url_Input from "../components/Url_Input.astro";
 				background-color: #fff;
 			}
 
-			@media screen and (max-width: 1440px) {
+			@media screen and (max-width: 1440px) and (min-width: 768px) {
 				section#advanced-stats,
 				section#url-input,
 				nav {
@@ -53,6 +53,9 @@ import Url_Input from "../components/Url_Input.astro";
 				#hero img {
 					width: 60%;
 				}
+			}
+
+			@media screen and (max-width: 768px) {
 			}
 		</style>
 	</head>

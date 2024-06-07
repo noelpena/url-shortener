@@ -24,7 +24,20 @@ import Button from "./Button.astro";
 	}
 
 	section#cta h2 {
-		font-size: 3rem;
+		font-size: clamp(1.75rem, 5vw, 3rem);
 		font-weight: 700;
+	}
+
+	@media screen and (max-width: 768px) {
+		section#cta {
+			padding-left: 1.5rem !important;
+			padding-right: 1.5rem !important;
+			background-image: url("../images/bg-boost-mobile.svg");
+		}
+
+		section#cta h2 {
+			text-align: center;
+			margin-bottom: 0;
+		}
 	}
 </style>

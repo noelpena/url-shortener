@@ -1,6 +1,9 @@
 ---
 import Button from "./Button.astro";
 import Logo from "./Logo.astro";
+
+import closeIcon from "/images/icon-close.svg";
+import hamburger from "/images/icon-hamburger.svg";
 ---
 
 <nav>
@@ -19,7 +22,23 @@ import Logo from "./Logo.astro";
 			<li><Button text="Sign Up" is_small={true} /></li>
 		</div>
 	</ul>
+	<div id="mobile-nav" style="display: none">
+		<img src={hamburger.src} alt="hamburger menu icon" />
+	</div>
 </nav>
+
+<div id="mobile_nav_menu" style="opacity: 0; visibility: hidden">
+	<div role="navigation" aria-label="mobile-navigation">
+		<ul>
+			<li><a href="##">Features</a></li>
+			<li><a href="##">Pricing</a></li>
+			<li><a href="##">Resources</a></li>
+			<hr />
+			<li><a href="##">Login</a></li>
+			<Button text="Sign Up" />
+		</ul>
+	</div>
+</div>
 
 <style>
 	nav {
@@ -63,4 +82,109 @@ import Logo from "./Logo.astro";
 		gap: 30px;
 		align-items: center;
 	}
+
+	@media screen and (max-width: 768px) {
+		nav {
+			padding-left: 1rem !important;
+			padding-right: 1rem !important;
+			margin-top: 2rem;
+			justify-content: space-between;
+		}
+
+		nav ul {
+			display: none;
+		}
+
+		#mobile-nav img {
+			display: block;
+			max-width: 100%;
+			height: auto;
+			width: 28px;
+			height: 20px;
+			cursor: pointer;
+		}
+
+		#mobile-nav img.open-menu-icon {
+			height: auto;
+		}
+
+		#mobile-nav {
+			display: block !important;
+		}
+
+		#mobile_nav_menu {
+			position: absolute;
+			left: 0;
+			background-color: #3a3054;
+			border-radius: 10px;
+			width: calc(100% - 6rem);
+			height: 383px;
+			padding: 2rem;
+			margin-top: 1rem;
+			margin: 1rem;
+			z-index: 5;
+			transition: 0.15s ease-in-out all;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+
+		#mobile_nav_menu div {
+			width: 100%;
+		}
+
+		#mobile_nav_menu ul {
+			margin: 0;
+			padding: 0;
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			gap: 1.5rem;
+		}
+
+		#mobile_nav_menu ul hr {
+			background-color: #9e9aa8;
+			opacity: 0.5;
+			width: 100%;
+		}
+
+		#mobile_nav_menu ul li {
+			list-style-type: none;
+		}
+
+		#mobile_nav_menu ul li a {
+			text-decoration: none;
+			color: #fff;
+			font-size: 1.35rem;
+			font-weight: 700;
+		}
+
+		#mobile_nav_menu ul li a:hover {
+			color: #2bd0d0;
+		}
+	}
 </style>
+
+<script define:vars={{ closeIcon, hamburger }}>
+	const hamburgerBtn = document.getElementById("mobile-nav");
+	const mobileMenu = document.getElementById("mobile_nav_menu");
+
+	if (mobileMenu) {
+		hamburgerBtn.addEventListener("click", (e) => {
+			console.dir(mobileMenu);
+			let imgSrc = hamburgerBtn.children[0].src;
+			if (imgSrc.includes("icon-hamburger")) {
+				hamburgerBtn.children[0].src = closeIcon.src;
+				hamburgerBtn.children[0].classList.add("open-menu-icon");
+				mobileMenu.style.opacity = 1;
+				mobileMenu.style.visibility = "visible";
+			} else if (imgSrc.includes("icon-close")) {
+				hamburgerBtn.children[0].classList.remove("open-menu-icon");
+				hamburgerBtn.children[0].src = hamburger.src;
+				mobileMenu.style.opacity = 0;
+				mobileMenu.style.visibility = "hidden";
+			}
+		});
+	}
+</script>

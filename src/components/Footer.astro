@@ -45,6 +45,7 @@ import SocialIcons from "./SocialIcons.astro";
 	footer {
 		background-color: #232127;
 	}
+
 	#footer-wrap {
 		display: flex;
 		justify-content: space-between;
@@ -75,5 +76,14 @@ import SocialIcons from "./SocialIcons.astro";
 	}
 	ul li a:hover {
 		color: #2bd0d0;
+	}
+
+	@media screen and (max-width: 768px) {
+		#footer-wrap {
+			flex-direction: column;
+			gap: 3rem;
+			align-items: center;
+			text-align: center;
+		}
 	}
 </style>

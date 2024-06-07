@@ -158,4 +158,39 @@
 		border: none;
 		border-top: 8px solid #2bd0d0;
 	}
+
+	@media screen and (max-width: 768px) {
+		#advanced-stats {
+			padding-top: 0;
+			padding-left: 1rem !important;
+			padding-right: 1rem !important;
+			padding-bottom: 2rem;
+		}
+
+		#advanced-stats h2 {
+			margin-top: 0;
+		}
+
+		#advanced-stats #cards {
+			flex-direction: column;
+			gap: 4rem;
+		}
+
+		#advanced-stats #cards .card {
+			margin-bottom: 1rem;
+			margin-top: 0;
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			border-radius: 5px;
+		}
+
+		#advanced-stats hr {
+			width: 12px;
+			height: 60%;
+			background-color: #2bd0d0;
+			border: none;
+		}
+	}
 </style>
