@@ -26,10 +26,26 @@ const fakedata = [
 	},
 ];
 
+// NEXT STEPS:
+// - add error state to input
+// - make input call API and add item to state
+// - possible add url_input to this component or just make it a react component that holds the state and passes to this component
+
 export default function SavedUrls() {
 	const [clickedBtn, setClickedBtn] = useState(null);
+	const [urlData, setUrlData] = useState([]);
 
-	const url_data = [];
+	useEffect(() => {
+		const savedData = localStorage.getItem(LOCAL_STORAGE_PREFIX);
+		if (savedData) {
+			setUrlData(JSON.parse(localStorage.getItem(LOCAL_STORAGE_PREFIX)));
+		}
+	}, []);
+
+	useEffect(() => {
+		localStorage.setItem(LOCAL_STORAGE_PREFIX, JSON.stringify(urlData));
+	}, [urlData]);
+
 	// const res = await fetch(`${BASE_URL}/hash`, {
 	// 	method: "POST",
 	// 	headers: {
@@ -45,6 +61,9 @@ export default function SavedUrls() {
 	function handleBtnClick(hash) {
 		setClickedBtn(hash);
 		setTimeout(() => removeBtnClick(), 3000);
+
+		const selectedBtn = urlData.find((data) => data.hash === hash);
+		navigator.clipboard.writeText(selectedBtn.short_url);
 	}
 
 	function removeBtnClick() {
@@ -56,7 +75,7 @@ export default function SavedUrls() {
 			id="saved-urls-wrap"
 			style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
 		>
-			{fakedata.map((data) => (
+			{urlData.map((data) => (
 				<article key={data.hash}>
 					<p style={{ margin: 0, padding: 0 }}>{data.long_url}</p>
 					<div id="link_btn_wrap">
