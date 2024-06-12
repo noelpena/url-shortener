@@ -50,7 +50,7 @@ export default function Url_Input() {
 
 		const data = await res.json();
 		console.log(data);
-		setUrlData([data]);
+		setUrlData([...urlData, data]);
 	}
 
 	function handleUrlDataChange(newData: hashed_url[]) {
