@@ -22,6 +22,7 @@
 	display: flex;
 	align-items: center;
 	gap: 1rem;
+	flex: 1;
 }
 
 #saved-urls-wrap article #link_btn_wrap span {
@@ -31,6 +32,10 @@
 #saved-urls-wrap article p {
 	margin: 0;
 	padding: 0;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	flex: 2;
 }
 
 #saved-urls-wrap article #link_btn_wrap button {
