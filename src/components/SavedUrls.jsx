@@ -71,10 +71,7 @@ export default function SavedUrls() {
 	}
 
 	return (
-		<div
-			id="saved-urls-wrap"
-			style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
-		>
+		<div id="saved-urls-wrap">
 			{urlData.map((data) => (
 				<article key={data.hash}>
 					<p style={{ margin: 0, padding: 0 }}>{data.long_url}</p>

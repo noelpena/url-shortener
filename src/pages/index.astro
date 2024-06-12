@@ -4,7 +4,8 @@ import CTA from "../components/CTA.astro";
 import Footer from "../components/Footer.astro";
 import Hero from "../components/Hero.astro";
 import Nav from "../components/Nav.astro";
-import Url_Input from "../components/Url_Input.astro";
+// import Url_Input from "../components/Url_Input.astro";
+import Url_Input from "../components/Url_Input.jsx";
 ---
 
 <html lang="en">
@@ -63,7 +64,7 @@ import Url_Input from "../components/Url_Input.astro";
 		<Nav />
 		<main>
 			<Hero />
-			<Url_Input />
+			<Url_Input client:load />
 			<AdvancedStats />
 			<CTA />
 		</main>
