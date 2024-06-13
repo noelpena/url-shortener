@@ -1,5 +1,5 @@
 import { renderers } from './renderers.mjs';
-import { l as levels, g as getEventPrefix, L as Logger, A as AstroIntegrationLogger, manifest } from './manifest_oXy1Jjl3.mjs';
+import { l as levels, g as getEventPrefix, L as Logger, A as AstroIntegrationLogger, manifest } from './manifest_BfkfwHLw.mjs';
 import { e as appendForwardSlash, j as joinPaths, t as trimSlashes, f as fileExtension, s as slash, p as prependForwardSlash, g as removeTrailingForwardSlash } from './chunks/astro/assets-service_BHPifp18.mjs';
 import { R as ROUTE_TYPE_HEADER, l as REROUTE_DIRECTIVE_HEADER, A as AstroError, n as i18nNoLocaleFoundInPath, o as ResponseSentError, p as MiddlewareNoDataOrNextCalled, q as MiddlewareNotAResponse, G as GetStaticPathsRequired, t as InvalidGetStaticPathsReturn, u as InvalidGetStaticPathsEntry, v as GetStaticPathsExpectedParams, w as GetStaticPathsInvalidRouteParam, P as PageNumberParamNotFound, D as DEFAULT_404_COMPONENT, N as NoMatchingStaticPathFound, x as PrerenderDynamicEndpointPathCollide, y as ReservedSlotName, z as renderSlotToString, B as renderJSX, C as chunkToString, H as isRenderInstruction, J as LocalsNotAnObject, K as clientLocalsSymbol, O as clientAddressSymbol$1, Q as PrerenderClientAddressNotAvailable, S as ClientAddressNotAvailable, T as StaticClientAddressNotAvailable, V as renderPage, W as renderEndpoint, X as ASTRO_VERSION, Y as AstroResponseHeadersReassigned, Z as responseSentSymbol$1, _ as RewriteEncounteredAnError, $ as REROUTABLE_STATUS_CODES } from './chunks/astro_nX8BPZXn.mjs';
 import { serialize, parse } from 'cookie';
@@ -2372,7 +2372,7 @@ const createExports = (manifest, { middlewareSecret, skewProtection }) => {
 
 const _page0 = () => import('./chunks/generic_BmQdKekq.mjs');
 const _page1 = () => import('./chunks/index_Cm1arfVD.mjs');
-const _page2 = () => import('./chunks/index_C7ZhJm-r.mjs');
+const _page2 = () => import('./chunks/index_DtpAWTYn.mjs');
 const pageMap = new Map([
     ["node_modules/astro/dist/assets/endpoint/generic.js", _page0],
     ["src/pages/api/hash/index.ts", _page1],
@@ -2385,7 +2385,7 @@ const _manifest = Object.assign(manifest, {
     middleware: onRequest
 });
 const _args = {
-    "middlewareSecret": "60870609-4446-4edd-ab13-e76bce5a4581",
+    "middlewareSecret": "bb36c6c7-7e1d-49d9-a2bd-b9d707dca196",
     "skewProtection": false
 };
 const _exports = createExports(_manifest, _args);
