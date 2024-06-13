@@ -8,6 +8,7 @@ import "../styles/urlInput.css";
 const LOCAL_STORAGE_PREFIX = "NP_URL_SHORTENER";
 
 export default function Url_Input() {
+	const [errorText, setErrorText] = useState("Please add a link");
 	const [inputError, setInputError] = useState(false);
 	const [urlData, setUrlData] = useState<hashed_url[]>([]);
 
@@ -38,7 +39,7 @@ export default function Url_Input() {
 	}
 
 	async function shortenUrl(inputValue: string) {
-		const res = await fetch(`api/hash`, {
+		const res = await fetch(`api/shorten`, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
@@ -48,9 +49,15 @@ export default function Url_Input() {
 			}),
 		});
 
-		const data = await res.json();
-		console.log(data);
-		setUrlData([...urlData, data]);
+		const return_data = await res.json();
+
+		if (return_data.success == 1) {
+			setUrlData([...urlData, return_data.data]);
+		} else {
+			setInputError(true);
+			setErrorText(return_data.error);
+			console.log(return_data.error);
+		}
 	}
 
 	function handleUrlDataChange(newData: hashed_url[]) {
@@ -75,7 +82,7 @@ export default function Url_Input() {
 				</div>
 				{inputError && (
 					<span id="input-error-text">
-						<em>Please add a link</em>
+						<em>{errorText}</em>
 					</span>
 				)}
 			</form>

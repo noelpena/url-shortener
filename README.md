@@ -1,6 +1,6 @@
-# Shortly URL shortening API
+# Shortly URL shortening
 
-[URL Shortener Live Site](https://url-shortener-lemon-theta.vercel.app/)
+[URL Shortener Live Site](https://url-shortener-page-noels-projects-e13071d7.vercel.app/)
 
 ## Overview
 
