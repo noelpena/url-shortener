@@ -18,8 +18,12 @@ export const POST: APIRoute = async ({ request }) => {
 		url: long_url,
 	});
 
+	const fetch_url = BASE_URL.startsWith("http")
+		? new URL(`${BASE_URL}/shorten`)
+		: new URL(`https://${BASE_URL}/shorten`);
+
 	try {
-		const res = await fetch(`${BASE_URL}/shorten`, {
+		const res = await fetch(fetch_url.href, {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json",
@@ -34,9 +38,9 @@ export const POST: APIRoute = async ({ request }) => {
 
 		if (data) {
 			return_data = {
-				hash: data.shortened.split("/")[3],
+				hash: data.result_url.split("/")[3],
 				long_url,
-				short_url: data.shortened,
+				short_url: data.result_url,
 			};
 
 			return new Response(
